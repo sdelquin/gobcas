@@ -1,32 +1,57 @@
 .content {
   padding: 1rem;
-  border-left: 1px dashed lightgray;
-  border-right: 1px dashed lightgray;
   margin-top: 3rem;
   font-family: sans-serif;
   font-size: 13pt;
   text-align: justify;
-  width: 30rem;
-  height: 13rem;
+  width: 50rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 3rem;
   margin-left: auto;
   margin-right: auto;
   font-weight: 100;
 }
 
-.go-cas a {
+a.button {
   padding: 1rem;
   display: inline-block;
-  background-color: #ffb8fd;
+  background-color: #b8d7ff;
   border-radius: 0.3rem;
   text-decoration: none;
-  color: #690e86;
+  color: #0e4c86;
   font-weight: 200;
 }
 
-.go-cas a:hover {
-  box-shadow: 0 0 0 2pt #6a0e86b9;
+a.button:hover {
+  box-shadow: 0 0 0 2pt #0e1686b9;
+}
+
+table.details {
+  font-family: monospace;
+  font-size: 11pt;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table.details tr:nth-child(even) {
+  background-color: #b8dfff4f;
+}
+
+table.details td {
+  padding: 0.2rem;
+  word-wrap: break-word;
+}
+
+table.details td.cas-key {
+  font-family: sans-serif;
+  width: 30%;
+}
+
+.info-msg {
+  color: rgb(28, 108, 155);
 }
