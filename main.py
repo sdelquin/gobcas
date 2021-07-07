@@ -1,6 +1,7 @@
 import flask
 from flask import Flask
 from flask_cas import CAS, login_required
+from flask_cas import logout as cas_logout
 
 import config
 
@@ -29,3 +30,9 @@ def index():
 @login_required
 def details():
     return flask.render_template('details.html', cas=app.cas)
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    return cas_logout()
