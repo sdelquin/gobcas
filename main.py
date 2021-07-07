@@ -22,7 +22,7 @@ app = init_app()
 
 @app.route('/')
 def index():
-    return flask.render_template('index.html')
+    return flask.render_template('index.html', cas=app.cas)
 
 
 @app.route('/details')

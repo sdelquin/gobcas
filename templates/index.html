@@ -1,11 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p>
-    Esta aplicación surge para probar la validación con el
-    <strong>Sistema Centralizado de Autenticación</strong> del Gobierno de
-    Canarias. Si pulsas en el siguiente botón, se te redirigirá al CAS y volverás
-    a esta web visualizando los atributos que se almacenan de tu cuenta.
-  </p>
-  <a class="button" href="/details">Llévame al CAS!</a>
+  {% if cas.username %}
+    <p>
+      Ya estás autenticado por el CAS del Gobierno de Canarias. Puedes pulsar el
+      siguiente botón para ver los detalles de tu cuenta:
+    </p>
+    <a class="button" href="/details">Ver detalles</a>
+  {% else %}
+    <p>
+      Esta aplicación surge para probar la validación con el
+      <strong>Sistema Centralizado de Autenticación</strong> del Gobierno de
+      Canarias. Si pulsas en el siguiente botón, se te redirigirá al CAS y volverás
+      a esta web visualizando los atributos que se almacenan de tu cuenta.
+    </p>
+    <a class="button" href="/details">Llévame al CAS!</a>
+  {% endif %}
 {% endblock %}
