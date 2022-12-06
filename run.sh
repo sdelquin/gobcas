@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source ~/.virtualenvs/gobcas/bin/activate
+source ~/.pyenv/versions/gobcas/bin/activate
 cd "$(dirname "$0")"
 exec gunicorn -c gunicorn.conf.py main:app
