@@ -1,4 +1,0 @@
-flask==2.0.1
-flask-cas-ng==1.1.0
-Werkzeug==2.2.2
-prettyconf
