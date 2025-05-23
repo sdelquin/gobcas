@@ -16,5 +16,7 @@ sync:
     uv sync --no-dev --group prod
 
 # Deploy
-deploy: && sync
+deploy:
     git pull
+    just sync
+    supervisorctl restart gobcas

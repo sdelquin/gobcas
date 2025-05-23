@@ -1,8 +1,8 @@
 name: CI
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 jobs:
   deploy:
     name: Deploy project
@@ -13,7 +13,9 @@ jobs:
       - name: Execute remote deploy commands
         uses: appleboy/ssh-action@master
         with:
-          host: sdelquin.me
+          host: matraka.es
           username: ${{ secrets.PRODUCTION_SSH_USERNAME }}
           key: ${{ secrets.PRODUCTION_SSH_KEY }}
-          script: ~/code/gobcas/deploy.sh
+          script: |
+            export PATH=$PATH:~/.local/bin
+            cd ~/code/gobcas && just deploy
